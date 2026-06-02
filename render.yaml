@@ -1,0 +1,39 @@
+# ============================================
+# Render.com 一键部署配置 (Blueprint)
+# 推送后在Render中点击 "New → Blueprint" 即可自动部署
+# ============================================
+services:
+  - type: web
+    name: ai-relay-station
+    runtime: node
+    region: singapore
+    plan: free
+    branch: main
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: "4000"
+      - key: NODE_VERSION
+        value: "20"
+      # 以下API Key请替换为你的真实密钥（至少配一个）
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: QWEN_API_KEY
+        sync: false
+      - key: MOONSHOT_API_KEY
+        sync: false
+      - key: BAIDU_API_KEY
+        sync: false
+      - key: BAIDU_SECRET_KEY
+        sync: false
+      - key: BYTEDANCE_API_KEY
+        sync: false
+      - key: ZHIPU_API_KEY
+        sync: false
